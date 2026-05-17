@@ -184,11 +184,11 @@ function renderSVG(stats, langs, grade, year) {
   <g transform="translate(336, 48)">${statRows}</g>
 
   <!-- Grade ring -->
-  <circle cx="608" cy="152" r="24" fill="none" stroke="#21262d" stroke-width="5"/>
-  <circle cx="608" cy="152" r="24" fill="none" stroke="#58a6ff" stroke-width="5"
+  <circle cx="608" cy="124" r="24" fill="none" stroke="#21262d" stroke-width="5"/>
+  <circle cx="608" cy="124" r="24" fill="none" stroke="#58a6ff" stroke-width="5"
     stroke-dasharray="${circumference.toFixed(2)}" stroke-dashoffset="${offset.toFixed(2)}"
-    stroke-linecap="round" transform="rotate(-90 608 152)"/>
-  <text x="608" y="157" text-anchor="middle" fill="#e6edf3" font-size="12" font-weight="500" font-family="monospace">${grade.label}</text>
+    stroke-linecap="round" transform="rotate(-90 608 124)"/>
+  <text x="608" y="124" text-anchor="middle" dominant-baseline="middle" fill="#e6edf3" font-size="12" font-weight="500" font-family="monospace">${grade.label}</text>
 </svg>`;
 }
 

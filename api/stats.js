@@ -106,7 +106,7 @@ function calcGrade(stats) {
     stats.prsMerged * 2 +
     stats.issues * 1 +
     stats.contributed * 2;
-  if (score >= 40000) return { label: "S", pct: 1 };
+  if (score >= 40000) return { label: "S",  pct: 1   };
   if (score >= 10000) return { label: "A+", pct: 0.9 };
   if (score >= 5000)  return { label: "A",  pct: 0.8 };
   if (score >= 2000)  return { label: "A-", pct: 0.7 };
@@ -145,19 +145,19 @@ function renderSVG(stats, langs, grade, year) {
     .join("");
 
   const statRows = [
-    { icon: "⭐", label: "Total Stars Earned", value: stats.stars },
-    { icon: "⟳", label: `Total Commits (${year})`, value: stats.commits.toLocaleString() },
-    { icon: "⎇", label: "Total PRs", value: stats.prs },
-    { icon: "⎇", label: "PRs Merged", value: `${stats.prsMerged} (${stats.mergedPct}%)` },
-    { icon: "◎", label: "Total Issues", value: stats.issues },
-    { icon: "⊕", label: "Contributed to", value: stats.contributed },
+    { label: "Total Stars Earned",        value: stats.stars },
+    { label: `Total Commits (${year})`,   value: stats.commits.toLocaleString() },
+    { label: "Total PRs",                 value: stats.prs },
+    { label: "PRs Merged",                value: `${stats.prsMerged} (${stats.mergedPct}%)` },
+    { label: "Total Issues",              value: stats.issues },
+    { label: "Contributed to",            value: stats.contributed },
   ]
     .map(
       (row, i) =>
         `<g transform="translate(0, ${i * 24})">
           <text x="0" y="13" fill="#8b949e" font-size="12" font-family="monospace">${row.label}</text>
-          <text x="260" y="13" fill="#e6edf3" font-size="12" font-family="monospace" text-anchor="end" font-weight="500">${row.value}</text>
-          <line x1="0" y1="20" x2="260" y2="20" stroke="#21262d" stroke-width="0.5"/>
+          <text x="200" y="13" fill="#e6edf3" font-size="12" font-family="monospace" text-anchor="end" font-weight="500">${row.value}</text>
+          <line x1="0" y1="20" x2="200" y2="20" stroke="#21262d" stroke-width="0.5"/>
         </g>`
     )
     .join("");
